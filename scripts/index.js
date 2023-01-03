@@ -1,5 +1,6 @@
+import {convertDateToTimeLapse} from "./convertDateToTimelapse.js";
+
 let comments;
-//let commentDiv = document.createElement('div');
 let body = document.querySelector('body');
 
 async function fetchComments() {
@@ -25,8 +26,12 @@ function createComment(comment){
     const commentHeader = document.createElement('div');
     const commentUser = document.createElement('p');
     const commentTimelapse = document.createElement('p');
+    const commentProfilePictureContainer = document.createElement('div');
+    const commentProfilePicture = document.createElement('img');
+
     commentUser.innerText = comment.user.username;
     commentTimelapse.innerText = convertDateToTimeLapse(comment.createdAt);
+
     commentHeader.appendChild(commentUser);
     commentHeader.appendChild(commentTimelapse);
     commentContainer.appendChild(commentHeader);
@@ -34,31 +39,9 @@ function createComment(comment){
 }
 
 
-function convertDateToTimeLapse(timeString){
-    const currentDateObject = new Date();
-    const commentTime = new Date(timeString);
-    const currentYear = currentDateObject.getFullYear();
-    const currentMonth = currentDateObject.getMonth()+1;
-    const currentDay = currentDateObject.getDate();
 
-    const commentTimeYear = commentTime.getFullYear();
-    const commentTimeMonth = commentTime.getMonth()+1;
-    const commentTimeDay = commentTime.getDate();
-
-    if(currentYear > commentTimeYear){
-        return `${currentYear - commentTimeYear} year ago`
-    }
-
-    //console.log(`${commentTimeYear} ${commentTimeMonth} ${commentTimeDay}`);
-    //console.log(commentTime);
-    //return `${commentTimeYear} ${commentTimeMonth} ${commentTimeDay}`;
-
-
-
-}
 
 
 displayComments();
-convertDateToTimeLapse();
 
 

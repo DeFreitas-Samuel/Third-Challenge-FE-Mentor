@@ -1,0 +1,23 @@
+{
+  "name": "interactive-comments-section-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeFreitas-Samuel/Third-Challenge-FE-Mentor.git"
+  },
+  "author": "Samuel de Freitas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeFreitas-Samuel/Third-Challenge-FE-Mentor/issues"
+  },
+  "homepage": "https://github.com/DeFreitas-Samuel/Third-Challenge-FE-Mentor#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
