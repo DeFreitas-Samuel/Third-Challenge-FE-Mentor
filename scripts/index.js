@@ -1,7 +1,8 @@
 import {convertDateToTimeLapse} from "./convertDateToTimelapse.js";
 
 let comments;
-let body = document.querySelector('body');
+const body = document.querySelector('body');
+const addCommentNode = document.querySelector('.add-comment-block')
 
 async function fetchComments() {
     let data = await fetch('./data.json');
@@ -14,11 +15,11 @@ async function displayComments() {
     comments = await fetchComments();
 
     comments.forEach((comment)=>{
-       body.appendChild(createComment(comment));
-       body.appendChild(document.createElement('hr'));
+       body.insertBefore(createComment(comment), addCommentNode);
+       //body.appendChild(document.createElement('hr'));
     })
 
-    console.log(comments);
+    //console.log(comments);
 }
 
 function createComment(comment){
